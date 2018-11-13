@@ -11,5 +11,28 @@ lib.pick = function (...) -- Picks an element from the table
     end
 end
 
+lib.enqueue = function(tbl, object, skipchecks)
+    skipchecks = skipchecks or false
+    if not skipchecks then
+        for k,v in ipairs(tbl) do
+            if k == object then
+                return "Error enqueuing the object \'"..tostring(object).."\' to the table \'"..tostring(tbl).."\'. There is already the same object queued"
+            end
+        end
+    end
+    table.insert(tbl, object)
+end
+
+lib.dequeue = function (tbl, object)
+    for k,v in ipairs(tbl) do
+        if v == object then
+            table.remove(tbl, k)
+            return true
+        end
+    end
+    return false
+
+    --if table.remove(tbl, object) then return true end
+end
 
 return lib
