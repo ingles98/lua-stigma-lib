@@ -1,6 +1,8 @@
 -- My lib lmao i am tired of rewriting or copy-pasting shit on different projects
-
 local lib = {}
+if love then
+    lib.love = require 'Lib/lua-stigma-lib/love2d_utilities'
+end
 -- GENERAL
 
 lib.pick = function (...) -- Picks an element from the table
