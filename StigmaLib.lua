@@ -6,6 +6,7 @@ end
 -- GENERAL
 
 lib.pick = function (...) -- Picks an element from the table
+	local arg = {...}
     if #arg == 0 then return end
     local rng = math.random(#arg)
     for k,v in ipairs(arg) do
