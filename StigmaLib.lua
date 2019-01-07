@@ -15,7 +15,7 @@ lib.pick = function (...) -- Picks an element from the table
 end
 
 lib.enqueue = function(tbl, object, skipchecks)
-    skipchecks = skipchecks or false
+    skipchecks = skipchecks or true
     if not skipchecks then
         for k,v in ipairs(tbl) do
             if k == object then
